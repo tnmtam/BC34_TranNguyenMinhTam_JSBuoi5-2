@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập thêm JS buổi 5</title>
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+      <!-- BT1 -->
+      <div class="d-flex justify-content-center">
+        <div class="card w-50">
+          <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+            Tính thuế thu nhập cá nhân
+          </div>
+          <div class="card-body fs-5">
+            <div class="form-group d-flex justify-content-around">
+              <input class="form-control w-25 fs-3" placeholder="Họ tên" id="name">
+              <input class="form-control w-25 fs-3" type="number" placeholder="Tổng thu nhập năm" id="totalTN">
+              <input class="form-control w-25 fs-3" type="number" placeholder="Số người phụ thuộc" id="people">
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-secondary fw-bold fs-4" id="btnTinh">
+              Tính thuế
+            </button>
+            <div class="mt-2 fs-3s" id="tinhThue"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <!-- BT2 -->
+      <div class="d-flex justify-content-center">
+        <div class="card w-50">
+          <div class="card-header bg-dark text-white text-center fw-bold fs-2">
+            Tính thuế thu nhập cá nhân
+          </div>
+          <div class="card-body fs-5">
+            <div class="form-group d-flex justify-content-around">
+              <select class="form-control w-25 fs-3" id="loai" onchange="myFuntion()">
+                  <option>Chọn loại khách hàng</option>
+                  <option>Nhà dân</option>
+                  <option>Doanh nghiệp</option>
+              </select>
+            </div>
+            <div class="form-group d-flex justify-content-around mt-4">
+              <input class="form-control w-25 fs-3" placeholder="Nhập mã khách hàng" id="maKH">
+              <input class="form-control w-25 fs-3" type="number" placeholder="Số kênh cao cấp" id="kenhCC">
+              <input type="text" id="demo" class="form-control w-25 fs-3" style="display: none;">
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-secondary fw-bold fs-4" id="btnTinhTien">
+              Tính tiền cáp
+            </button>
+            <div class="mt-2 fs-3s" id="tienCap"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+
+    <script src="./main.js"></script>
+</body>
+</html>
