@@ -37,8 +37,60 @@ document.getElementById('btnTinh').onclick = function() {
  * BT2: 
  */
 
+document.getElementById('btnTinhTien').onclick = function() {
+    //input
+    var user = document.getElementById("user").value;
+    var maKH = document.getElementById('maKH').value;
+    var kenhCC = document.getElementById('kenhCC').value *1;
+    var soKN = document.getElementById('soKN').value *1;
+    var hoaDon = 0;
+    var phiDV = 0;
+    var total;
+    //process
+    switch(user) {
+        case "Nhà dân":
+            hoaDon = 4.5;
+            phiDV = 20.5;
+            kenhCC = kenhCC * 7.5;
+            total = hoaDon + phiDV + kenhCC;  
+        break;
 
+        case "Doanh nghiệp":
+            hoaDon = 15;
+            kenhCC = kenhCC * 50;
+            if(soKN <= 10) {
+                phiDV = soKN * 75;
+            }else {
+                phiDV = 10 * 75 + (soKN - 10) * 5;
+            }
+            total = hoaDon + phiDV + kenhCC;
+        break;
 
-//     //VND
-//     var formart = new Intl.NumberFormat("vn-VN");
-//     var totalVnd = formart.format(total) + ' VND';
+        default:
+            alert("Hãy chọn người dùng!");
+    }
+
+    var formart = new Intl.NumberFormat('en-US', {
+        // style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      });
+    var total$ = '$' + formart.format(total); 
+    //output
+    document.getElementById('tienCap').innerHTML = 'Mã khách hàng: ' + maKH + '; Tiền cáp: ' + total$;
+    
+}
+
+function myFuntion() {
+    var x = document.getElementById("user").value;
+    switch(x) {
+        case "Doanh nghiệp":
+            document.getElementById("soKN").style.display = "block";
+        break;
+
+        default:
+            document.getElementById("soKN").style.display = "none";
+
+    }
+}
+
